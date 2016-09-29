@@ -24,11 +24,7 @@ public class NewsLoader extends AsyncTaskLoader<List<News>> {
     @Override
     public List<News> loadInBackground() {
         if(mUrl == null) return null;
-        try{
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         List<News> newsList = QueryUtils.fetchNewsData(mUrl);
         return newsList;
     }
